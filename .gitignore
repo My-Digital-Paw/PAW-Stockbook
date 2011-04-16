@@ -1,5 +1,9 @@
+# SBT recommended ignore rules
 target/
 lib_managed/
 src_managed/
 project/boot/
+
+# The lock created while running the H2 Database
+*.lock.db
 
