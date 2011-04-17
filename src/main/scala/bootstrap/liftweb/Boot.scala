@@ -35,7 +35,7 @@ class Boot {
     // you don't need to use Mapper to use Lift... use
     // any ORM you want
     Schemifier.schemify(true, Schemifier.infoF _, User,
-                        Brand, Category, Inventory)
+                        Brand, Category, Product)
 
     // where to search snippet
     LiftRules.addToPackages("code")
@@ -52,8 +52,8 @@ class Boot {
         Category.menus:_*
       ),
 
-      Menu.i("Inventory") / "inventory" submenus (
-        Inventory.menus:_*
+      Menu.i("Product") / "product" submenus (
+        Product.menus:_*
       ),
 
       // more complex because this menu allows anything in the
