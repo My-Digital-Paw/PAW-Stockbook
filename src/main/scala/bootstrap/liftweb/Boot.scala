@@ -34,7 +34,8 @@ class Boot {
     // Use Lift's Mapper ORM to populate the database
     // you don't need to use Mapper to use Lift... use
     // any ORM you want
-    Schemifier.schemify(true, Schemifier.infoF _, User, Brand, Inventory)
+    Schemifier.schemify(true, Schemifier.infoF _, User,
+                        Brand, Category, Inventory)
 
     // where to search snippet
     LiftRules.addToPackages("code")
@@ -45,6 +46,10 @@ class Boot {
       
       Menu.i("Brand") / "brand" submenus (
         Brand.menus:_*
+      ),
+      
+      Menu.i("Category") / "category" submenus (
+        Category.menus:_*
       ),
 
       Menu.i("Inventory") / "inventory" submenus (
