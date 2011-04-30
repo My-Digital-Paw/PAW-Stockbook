@@ -6,11 +6,9 @@ import mapper._
 
 class Product extends LongKeyedMapper[Product] with IdPK {
   def getSingleton = Product
-  object category extends MappedLongForeignKey(this, Category)
-  object brand extends MappedLongForeignKey(this, Brand)
-  object model extends MappedPoliteString(this, 20)
-  object name extends MappedPoliteString(this, 100)
-  object description extends MappedTextarea(this, 1000)
+  object itemNameCode extends MappedPoliteString(this, 30)
+  object description extends MappedPoliteString(this, 500)
+  object picture extends MappedPoliteString(this, 100)
   object quantity extends MappedInt(this)
 }
 

@@ -7,3 +7,5 @@ project/boot/
 # The lock created while running the H2 Database
 *.lock.db
 
+# Temporary files created by editors
+*.swp
