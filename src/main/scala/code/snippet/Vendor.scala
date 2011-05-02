@@ -31,20 +31,21 @@ object Vendor extends Wizard {
   }
 
   val screen5 = new Screen {
-    val remark = textArea("Remark", "")
+    val remark = textarea("Remark", "")
   }
 
   def finish() {
-    S.notice("Name: " + name)
-    S.notice("Balance: " + balance)
-    S.notice("Business Address: " + businessAddress)
-    S.notice("Contact Name: " + contactName)
-    S.notice("Contact Phone: " + contactPhone)
-    S.notice("Contact Fax: " + contactFax)
-    S.notice("Contact Email: " + contactEmail)
-    S.notice("Contact Website: " + contactWebsite)
-    S.notice("Payment Term: " + paymentTerm)
-    S.notice("Taxing Scheme: " + taxingScheme)
-    S.notice("Carrier: " + carrier)
+    S.notice("Name: " + screen1.name)
+    S.notice("Balance: " + screen1.balance)
+    S.notice("Business Address: " + screen2.businessAddress)
+    S.notice("Contact Name: " + screen3.contactName)
+    S.notice("Contact Phone: " + screen3.contactPhone)
+    S.notice("Contact Fax: " + screen3.contactFax)
+    S.notice("Contact Email: " + screen3.contactEmail)
+    S.notice("Contact Website: " + screen3.contactWebsite)
+    S.notice("Payment Term: " + screen4.paymentTerm)
+    S.notice("Taxing Scheme: " + screen4.taxingScheme)
+    S.notice("Carrier: " + screen4.carrier)
+    S.notice("Remark: " + screen5.remark)
   }
 }
