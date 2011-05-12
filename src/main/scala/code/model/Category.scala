@@ -7,8 +7,7 @@ import mapper._
 class Category extends LongKeyedMapper[Category] with IdPK {
   def getSingleton = Category
   object name extends MappedPoliteString(this, 50)
-  object parent extends LongMappedMapper(this, Category) 
+  object parent extends MappedLongForeignKey(this, Category) 
 }
 
 object Category extends Category with LongKeyedMetaMapper[Category] with LongCRUDify[Category]
-

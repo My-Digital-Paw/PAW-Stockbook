@@ -34,7 +34,7 @@ class Boot {
     // Use Lift's Mapper ORM to populate the database
     // you don't need to use Mapper to use Lift... use
     // any ORM you want
-    Schemifier.schemify(true, Schemifier.infoF _, User)
+    Schemifier.schemify(true, Schemifier.infoF _, User, Category)
 
     // where to search snippet
     LiftRules.addToPackages("code")
@@ -43,9 +43,11 @@ class Boot {
     def sitemap = SiteMap(
       Menu.i("Home") / "index" >> User.AddUserMenusAfter, // the simple way to declare a menu
 
-      Menu.i("Vendor") / "vendor",
+      Brand.menus(0),
+      Brand.menus(1),
+      Menu.i("Brand") / "brand",
 
-      Menu.i("Product") / "product",      
+      Menu.i("Category") / "category",
       
       // more complex because this menu allows anything in the
       // /static path to be visible
