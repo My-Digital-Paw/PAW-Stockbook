@@ -1,6 +1,7 @@
 import sbt._
+import de.element34.sbteclipsify._
 
-class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
+class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) with Eclipsify {
   val liftVersion = "2.3"
 
   // uncomment the following if you want to use the snapshot repo
