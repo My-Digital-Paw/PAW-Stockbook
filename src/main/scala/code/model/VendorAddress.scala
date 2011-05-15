@@ -7,15 +7,15 @@ import mapper._
 class VendorAddress extends LongKeyedMapper[VendorAddress] with IdPK {
   def getSingleton = VendorAddress
 
-  object vendorId extends MappedLongForeignKey(this, Vendor)
+  object vendor extends MappedLongForeignKey(this, Vendor)
   object addressName extends MappedPoliteString(this, 50)
   object street extends MappedPoliteString(this, 100)
   object city extends MappedPoliteString(this, 50)
   object stateProvince extends MappedPoliteString(this, 50)
-  object country extends MappedPoliteString(this, 50)
-  object zipPostalCode extends MappedPoliteString(this, 10)
+  object country extends MappedCountry(this)
+  object zipPostalCode extends MappedPostalCode(this, country)
   object remark extends MappedPoliteString(this, 200)
-  object vendorAddressType extends MappedLongForeignKey(this, VendorAddressType)
+  object addressType extends MappedLongForeignKey(this, AddressType)
 }
 
 object VendorAddress extends VendorAddress with LongKeyedMetaMapper[VendorAddress] with LongCRUDify[VendorAddress]

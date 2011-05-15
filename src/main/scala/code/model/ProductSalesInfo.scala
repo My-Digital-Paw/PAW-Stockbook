@@ -8,7 +8,7 @@ class ProductSalesInfo extends LongKeyedMapper[ProductSalesInfo] with IdPK {
   def getSingleton = ProductSalesInfo
 
   object productId extends MappedLongForeignKey(this, Product)
-  object productPricingCurrencyId extends MappedLongForeignKey(this, ProductPricingCurrency)
+  object productPricingCurrency extends MappedLongForeignKey(this, PricingCurrency)
   object price extends MappedDouble(this)
 }
 

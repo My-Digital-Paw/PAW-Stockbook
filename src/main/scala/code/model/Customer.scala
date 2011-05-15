@@ -17,13 +17,13 @@ class Customer extends LongKeyedMapper[Customer] with IdPK {
   object person extends MappedPoliteString(this, 100)
   object phone extends MappedPoliteString(this, 20)
   object fax extends MappedPoliteString(this, 20)
-  object email extends MappedPoliteString(this, 100)
+  object email extends MappedEmail(this, 100)
   object website extends MappedPoliteString(this, 100)
   
   // purchasing info
-  object pricingCurrency extends MappedLongForeignKey(this, ProductPricingCurrency)
+  object pricingCurrency extends MappedLongForeignKey(this, PricingCurrency)
   object discount extends MappedInt(this)
-  object paymentTerms extends MappedLongForeignKey(this, CustomerPaymentTerm)
+  object paymentTerms extends MappedLongForeignKey(this, PaymentTerm)
   object taxingScheme extends MappedLongForeignKey(this, TaxingScheme)
   object taxExemptNum extends MappedPoliteString(this, 50)
   

@@ -4,12 +4,12 @@ package model
 import net.liftweb._
 import mapper._
 
-class CustomerAddress extends LongKeyedMapper[CustomerAddress] with IdPK {
-  def getSingleton = CustomerAddress
+class ReceivingAddress extends LongKeyedMapper[ReceivingAddress] with IdPK {
+  def getSingleton = ReceivingAddress
 
-  object customerId extends MappedLongForeignKey(this, Customer)
   object addressName extends MappedPoliteString(this, 50)
-  object street extends MappedPoliteString(this, 100)
+  object streetLine1 extends MappedPoliteString(this, 100)
+  object streetLine2 extends MappedPoliteString(this, 100)
   object city extends MappedPoliteString(this, 50)
   object stateProvince extends MappedPoliteString(this, 50)
   object country extends MappedCountry(this)
@@ -18,5 +18,5 @@ class CustomerAddress extends LongKeyedMapper[CustomerAddress] with IdPK {
   object addressType extends MappedLongForeignKey(this, AddressType)
 }
 
-object CustomerAddress extends CustomerAddress with LongKeyedMetaMapper[CustomerAddress] with LongCRUDify[CustomerAddress]
+object ReceivingAddress extends ReceivingAddress with LongKeyedMetaMapper[ReceivingAddress] with LongCRUDify[ReceivingAddress]
 

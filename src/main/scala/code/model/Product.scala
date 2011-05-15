@@ -33,11 +33,11 @@ class Product extends LongKeyedMapper[Product] with IdPK {
   object lastVendor extends MappedLongForeignKey(this, Vendor)
   
   // unit of measure
-  object standardUoM extends MappedPoliteString(this, 10)
-  object salesUoM extends MappedPoliteString(this, 10)
+  object standardUoM extends MappedLongForeignKey(this, Unit)
+  object salesUoM extends MappedLongForeignKey(this, Unit)
   object salesUoMOrigin extends MappedInt(this)
   object salesUoMCopy extends MappedInt(this)
-  object purchasingUoM extends MappedPoliteString(this, 10)
+  object purchasingUoM extends MappedLongForeignKey(this, Unit)
   object purchasingUoMOrigin extends MappedInt(this)
   object purchasingUoMCopy extends MappedInt(this)
   

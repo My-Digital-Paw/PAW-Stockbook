@@ -34,7 +34,17 @@ class Boot {
     // Use Lift's Mapper ORM to populate the database
     // you don't need to use Mapper to use Lift... use
     // any ORM you want
-    Schemifier.schemify(true, Schemifier.infoF _, User)
+    Schemifier.schemify(true, Schemifier.infoF _, User,
+        AddressType, Brand, Carrier, CompanyInfo, Country,
+        code.model.Currency, CurrencyConversion, Customer,
+        CustomerAddress, CustomerCardType, DocumentNumber,
+        Location, PaymentMethod, PaymentTerm, PricingCurrency,
+        Product, ProductAndInventory, ProductCategory,
+        ProductCostingMethod, ProductInventory, ProductSalesInfo,
+        ProductTaxCode, ProductType, PurchaseOrder,
+        PurchaseOrderDetail, ReceivingAddress, SalesOrder,
+        SalesRep, TaxingScheme, Unit, UnitTypeLength,
+        UnitTypeWeight, code.model.Vendor, VendorAddress)
 
     // where to search snippet
     LiftRules.addToPackages("code")
@@ -43,6 +53,10 @@ class Boot {
     def sitemap = SiteMap(
       Menu.i("Home") / "index" >> User.AddUserMenusAfter, // the simple way to declare a menu
 
+      Menu.i("Setup Wizard") / "setupWizard",
+      Menu.i("Company Info") / "companyInfo",
+      Menu.i("Product") / "productScreen",
+      
       Brand.menus(0),
       Brand.menus(1),
       Menu.i("Brand") / "brand",

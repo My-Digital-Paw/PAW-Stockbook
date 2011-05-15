@@ -17,11 +17,11 @@ class Vendor extends LongKeyedMapper[Vendor] with IdPK {
   object person extends MappedPoliteString(this, 100)
   object phone extends MappedPoliteString(this, 20)
   object fax extends MappedPoliteString(this, 20)
-  object email extends MappedPoliteString(this, 100)
+  object email extends MappedEmail(this, 100)
   object website extends MappedPoliteString(this, 100)
 
   // purchasing information
-  object paymentTerms extends MappedLongForeignKey(this, VendorPaymentTerm)
+  object paymentTerms extends MappedLongForeignKey(this, PaymentTerm)
   object taxingScheme extends MappedLongForeignKey(this, TaxingScheme)
   object carrier extends MappedPoliteString(this, 50)
   object currency extends MappedPoliteString(this, 50)
