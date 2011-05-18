@@ -3,6 +3,7 @@ package model
 
 import net.liftweb._
 import mapper._
+import scala.xml.Text
 
 class Product extends LongKeyedMapper[Product] with IdPK {
   def getSingleton = Product

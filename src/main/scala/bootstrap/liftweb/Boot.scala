@@ -55,13 +55,15 @@ class Boot {
 
       Menu.i("Setup Wizard") / "setupWizard",
       Menu.i("Company Info") / "companyInfo",
-      Menu.i("Product") / "productScreen",
+          
+      Menu.i("Product") / "productScreen" submenus (
+          Product.menus:_*),
       
-      Brand.menus(0),
-      Brand.menus(1),
-      Menu.i("Brand") / "brand",
+      Menu.i("Brand") / "brand" submenus (
+          Brand.menus:_*),
 
-      Menu.i("Category") / "category",
+      Menu.i("Category") / "category" submenus (
+          ProductCategory.menus:_*),
       
       // more complex because this menu allows anything in the
       // /static path to be visible
